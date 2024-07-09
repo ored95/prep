@@ -22,5 +22,5 @@ fn get_char(data: String) -> char {
 fn string_uppercase(data: &String) {
     let data1 = data.to_uppercase();
 
-    println!("{}", data);
+    println!("{}", data1);
 }
