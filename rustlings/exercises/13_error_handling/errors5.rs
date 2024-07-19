@@ -22,14 +22,16 @@
 // Execute `rustlings hint errors5` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+// The stdlib helps in boxing our errors by having Box implement conversion from any type
+// that implements the Error trait into the trait object Box<Error>, via From.
+// https://doc.rust-lang.org/rust-by-example/error/multiple_error_types/boxing_errors.html
 
 use std::error;
 use std::fmt;
 use std::num::ParseIntError;
 
 // TODO: update the return type of `main()` to make this compile.
-fn main() -> Result<(), Box<dyn ???>> {
+fn main() -> Result<(), Box<dyn error::Error>> {
     let pretend_user_input = "42";
     let x: i64 = pretend_user_input.parse()?;
     println!("output={:?}", PositiveNonzeroInteger::new(x)?);
