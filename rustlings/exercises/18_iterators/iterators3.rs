@@ -26,15 +26,14 @@ pub struct NotDivisibleError {
 pub fn divide(a: i32, b: i32) -> Result<i32, DivisionError> {
     if b == 0 {
         return Err(DivisionError::DivideByZero);
-    }
-    let res = a / b;
-    if a != res * b {
+    } else if a % b != 0 {
         return Err(DivisionError::NotDivisible(NotDivisibleError {
             dividend: a, 
             divisor: b, 
         }));
+    } else {
+        Ok(a / b)
     }
-    Ok(res)
 }
 
 // Complete the function and return a value of the correct type so the test
