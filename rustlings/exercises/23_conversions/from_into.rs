@@ -43,26 +43,20 @@ impl Default for Person {
 
 impl From<&str> for Person {
     fn from(s: &str) -> Person {
-        if s.chars().count() == 0 {     // same as s.is_empty()
-            Person::default()
-        } else {
-            let mut iter = s.split(',');
-            let name = match iter.next() {
-                Some("") | None => return Person::default(),
-                Some(x) => String::from(x)
-            };
-            let age = match iter.next() {
-                Some(x) => match x.parse::<usize>() {
+        if s.chars().count() > 0 {     // same as s.is_empty()
+            let item: Vec<_> = s.split(',').collect();
+            if item.len() == 2 {
+                let name: String = item[0].to_string();
+                let age: usize = match item[1].parse::<usize>() {
                     Ok(x) => x,
-                    Err(_) => return Person::default(),
-                },
-                None => return Person::default(),
-            };
-            match iter.next() {
-                Some(_) => return Person::default(),
-                None => return Person{name, age},
-            };
+                    Err(_) => 0,
+                };
+                if !name.is_empty() && age > 0 {
+                    return Person {name, age};
+                }
+            }
         }
+        return Person::default();
     }
 }
 
