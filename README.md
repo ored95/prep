@@ -1,7 +1,7 @@
 # preparing
 ```This is what I'm learning now ```
 
-1. Rustling from scratch ([source](https://github.com/rust-lang/rustlings/))
+1. Rustling from scratch ([source](https://github.com/rust-lang/rustlings/)) :heavy_check_mark:
 * Branch version: **5.6.1**
 ```
 How to install;
