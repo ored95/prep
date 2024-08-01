@@ -11,4 +11,4 @@ How to install;
 ```
 2. Spinning Cube in Linux terminal
 * C [source](https://github.com/servetgulnaroglu/cube.c) from @servetgulnaroglu
-
+* C++ [version](./cubic/src/main.cpp) with class implementation
