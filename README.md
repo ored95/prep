@@ -9,3 +9,6 @@ How to install;
 > cargo install rustlings
 > rustlings watch
 ```
+2. Spinning Cube in Linux terminal
+* C [source](https://github.com/servetgulnaroglu/cube.c) from @servetgulnaroglu
+
